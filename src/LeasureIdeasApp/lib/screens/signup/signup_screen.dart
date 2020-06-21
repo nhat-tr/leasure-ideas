@@ -41,14 +41,10 @@ class Body extends StatelessWidget {
                 width: size.width * 0.4,
               ),
               RoundedTextField(
-                onChange: (value) {
-                  print("");
-                },
                 prefixIcon: Icons.person,
                 hintText: "Your email",
               ),
               RoundedTextField(
-                onChange: (value) {},
                 prefixIcon: Icons.lock,
                 hintText: "Password",
                 suffixIcon: Icons.visibility_off,

@@ -1,4 +1,5 @@
 import 'package:LeasureIdeasApp/components/rounded_button.dart';
+import 'package:LeasureIdeasApp/data_layer/user_repository.dart';
 import 'package:LeasureIdeasApp/screens/login/login_screen.dart';
 import 'package:LeasureIdeasApp/screens/signup/signup_screen.dart';
 import 'package:LeasureIdeasApp/screens/welcome/components/background.dart';
@@ -6,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
-  const Body({Key key}) : super(key: key);
+  final UserRepository userRepository;
+  const Body({Key key, @required this.userRepository}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class Body extends StatelessWidget {
                 onPress: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
-                      return LoginScreen();
+                      return LoginScreen(userRepository: userRepository,);
                     },
                   ));
                 },

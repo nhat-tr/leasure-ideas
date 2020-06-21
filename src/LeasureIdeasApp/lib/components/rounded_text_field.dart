@@ -9,11 +9,11 @@ class RoundedTextField extends StatelessWidget {
     this.inputType = TextInputType.text,
     this.hintText = '',
     this.suffixIcon,
-    @required this.onChange,
+    this.controller,
     @required this.prefixIcon,
   }) : super(key: key);
 
-  final ValueChanged<String> onChange;
+  final TextEditingController controller;
   final bool obscureText;
   final TextInputType inputType;
   final IconData prefixIcon;
@@ -24,7 +24,7 @@ class RoundedTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
-        onChanged: this.onChange,
+        controller: controller,
         obscureText: this.obscureText,
         keyboardType: this.inputType,
         style: TextStyle(color: kPrimaryColor),
